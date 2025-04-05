@@ -1,167 +1,145 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
+// Função para calcular densidade populacional
+float calcularDensidadePopulacional(int populacao, float area) {
+    return (float)populacao / area;
+}
 
-int main(){
+// Função para calcular PIB per capita
+float calcularPibPerCapita(float pib, int populacao) {
+    return pib / populacao;
+}
 
-    //Jose Gregorio
-    //Cadastro de carta 1
-    
+int main() {
+    // Cadastro de carta 1
     int codigo1;
-    char estado[3];
-    char nomedacidade[50];
-    int populaçao1;
-    float areakm;
-    float pib;
-    int numerodepontos1;
+    char estado1[3];
+    char nomeDaCidade1[50];
+    int populacao1;
+    float areaKm1;
+    float pib1;
+    int numeroDePontosTuristicos1;
 
-    //cadastro de carta 2
-
+    // Cadastro de carta 2
     int codigo2;
     char estado2[3];
-    char nomedacidade2[50];
-    int populaçao2;
-    float areakm2;
+    char nomeDaCidade2[50];
+    int populacao2;
+    float areaKm2;
     float pib2;
-    int numerodepontos2;
-    float densidadepopulacional2;
-    float pibpercapita2;
+    int numeroDePontosTuristicos2;
+    float densidadePopulacional2;
+    float pibPerCapita2;
 
+    // Entrada de dados para carta 1
+    printf("Coloque o código da carta 1:\n");
+    scanf("%d", &codigo1);
 
-  printf("Coloque o codigo da carta:\n");
-  scanf("%d", &codigo1);
+    printf("Coloque o estado abreviado (EX -> RJ,SP):\n");
+    scanf("%2s", estado1);
 
-  printf("Coloque o estado abreviado (EX -> RJ,SP):\n");
-  scanf("%2s", "estado1");
+    printf("Coloque o nome da cidade:\n");
+    scanf("%49s", nomeDaCidade1);
 
-  printf("Coloque o nome da cidade:\n");
-  scanf("%49s", "nomedacidade1");
+    printf("Coloque a população da cidade:\n");
+    scanf("%d", &populacao1);
 
-  printf("Coloque a populaçao da cidade:\n");
-  scanf("%d", &populaçao2);
+    printf("Coloque a área em km²:\n");
+    scanf("%f", &areaKm1);
 
-  printf("Coloque a area em km²:\n");
-  scanf("%f", &"areakm1");
+    printf("Coloque o PIB da cidade:\n");
+    scanf("%f", &pib1);
 
-  printf("Coloque o PIB da cidade:\n");
-  scanf("%f", "pib1");
+    printf("Coloque o número de pontos turísticos:\n");
+    scanf("%d", &numeroDePontosTuristicos1);
 
-  printf("Coloque o numero de pontos turisticos:\n");
-  scanf("%d", &numerodepontos1);
+    // Entrada de dados para carta 2
+    printf("Coloque o código da carta 2:\n");
+    scanf("%d", &codigo2);
 
-  //Funçao para calcular densidade PIB per capita da carta 1
+    printf("Coloque o estado abreviado (EX -> RJ,SP):\n");
+    scanf("%2s", estado2);
 
-  densidadepopulacional2 = (float)populaçao2 / areakm2;
-  pibpercapita2 / areakm2;
-  pibpercapita2 = pib2 / populaçao2; 
+    printf("Coloque o nome da cidade:\n");
+    scanf("%49s", nomeDaCidade2);
 
-  //calculando o superpoder da carta 2
-  superpoder2 = (float)populaçao2 + areakm2 + pib2 + numerodepontos2 + pibpercapita2 + (1/densidadepopulacional2);
+    printf("Coloque a população da cidade:\n");
+    scanf("%d", &populacao2);
 
-  //exibir as informaçoes da carta 2 cadastrada
+    printf("Coloque a área em km²:\n");
+    scanf("%f", &areaKm2);
 
-  printf("Carta 2\n");
-  printf("Codigo da carta2: %d\n", codigo2);
-  printf("Estado: %s\n", "estado2");
-  printf("Nome da cidade: %s\n", "nomedacidade2");
-  printf("Populaçao: %d\n", "populaçao2");
-  printf("Area em km²: %.2f\n", "areakm2");
-  printf("PIB: %.2f\n", "pib2");
-  printf("Quantidade de pontos turisticos: %d\n", "numerodepontos2");
-  printf("Densidade populacional: %.2f\n", "densidadepopulacional2");
-  printf("PIB per capita e: %.2f\n", "pibpercapita2");
+    printf("Coloque o PIB da cidade:\n");
+    scanf("%f", &pib2);
 
-  //Comparando as cartas
+    printf("Coloque o número de pontos turísticos:\n");
+    scanf("%d", &numeroDePontosTuristicos2);
 
-  printf("***Escolha o atriuto que deseja comparar***\n");
-  printf("1 - Populaçao.\n");
-  printf("2 - Area.\n");
-  printf("3 - PIB\n");
-  printf("4 - Numero de pontos turisticos\n");
-  printf("5 - Densidade demografica.\n");
-  scanf("%d", &"opçao");
+    // Calcular densidade populacional e PIB per capita para carta 2
+    densidadePopulacional2 = calcularDensidadePopulacional(populacao2, areaKm2);
+    pibPerCapita2 = calcularPibPerCapita(pib2, populacao2);
 
-  /* O switch e uma estrutura de controle que facilita a escolha entre multiplas execuçoes possiveis com base no valor de uma variavel ou expressao*/
-  
-  //Exibindo resultados:
+    // Exibir informações da carta 2 cadastrada
+    printf("Carta 2\n");
+    printf("Código da carta 2: %d\n", codigo2);
+    printf("Estado: %s\n", estado2);
+    printf("Nome da cidade: %s\n", nomeDaCidade2);
+    printf("População: %d\n", populacao2);
+    printf("Área em km²: %.2f\n", areaKm2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Quantidade de pontos turísticos: %d\n", numeroDePontosTuristicos2);
+    printf("Densidade populacional: %.2f\n", densidadePopulacional2);
+    printf("PIB per capita: %.2f\n", pibPerCapita2);
 
-  printf("### RESULTADO COMPARAÇAO ###\n");
-  printf("### %s X %s ###\n", "nomedacidade1", nomedacidade2);
-  switch(opçao){ 
-    //Switch e uma estrutura de condiçao que define o codigo a ser executado com base em uma comparaçao de valores.
-    case 1:
-  printf("Vamos comparar a populaçao:\n");
-  printf("A populaçao de %s e: %d hab. Populaçao de %s e: %d hab.\n", "nomedacidade1, populaçao1, nomedacidade2, populaçao2");
-  if("populaçao1 > populaçao2"){
-    printf("### A CARTA UM VENCEU!! ###\n");
-  } else if("populaçao1 < populaçao2"){
-    printf("### A CARTA DOIS VENCEU11 ###\n");
-  } else {
-    printf("### EMPATE ###\n");
-  }
-  break;
-  default:
-  printf("opçao invalida\n");
-  break;
+    // Comparar cartas
+    int opcao;
+    printf("***Escolha o atributo que deseja comparar***\n");
+    printf("1 - População.\n");
+    printf("2 - Área.\n");
+    printf("3 - PIB\n");
+    printf("4 - Número de pontos turísticos\n");
+    printf("5 - Densidade demográfica.\n");
+    scanf("%d", &opcao);
+
+    switch(opcao) {
+        case 1:
+            printf("Vamos comparar a população:\n");
+            printf("A população de %s é: %d hab. População de %s é: %d hab.\n", nomeDaCidade1, populacao1, nomeDaCidade2, populacao2);
+            if(populacao1 > populacao2) {
+                printf("### A CARTA UM VENCEU!! ###\n");
+            } else if(populacao1 < populacao2) {
+                printf("###  A CARTA DOIS VENCEU!! ###\n");
+            } else {
+
+                printf("### EMPATE ###\n");
+            }
+            break; // Adicionado para encerrar o case 1
+
+        case 2:
+            printf("Vamos comparar a área:\n");
+            // Lógica para comparar a área
+            break;
+
+        case 3:
+            printf("Vamos comparar o PIB:\n");
+            // Lógica para comparar o PIB
+            break;
+            
+        
+            case 4:
+            printf("Vamos comparar o número de pontos turísticos:\n");
+            // Lógica para comparar os pontos turísticos
+            break;
+
+        case 5:
+            printf("Vamos comparar a densidade demográfica:\n");
+            // Lógica para comparar a densidade demográfica
+            break;
+
+            default:
+            printf("Opção inválida!\n");
+            break;
+    }
+
+    return 0; // Finalizando o programa
 }
-  case 2:
-  printf("Vamos comparar a area:\n");
-  printf("A area de %s e: %f km². Area de %s e: %f km².\n",nomedacidade1, areakm1, nomedacidade2, areakm2);
-
-  if(areakm1 > areakm2){
-    printf("*** A CARTA UM VENCEU!!***\n");
-  }else if (areakm1 < areakm2){
-    printf("*** A CARTA DOIS VENCEU!!***\n");
-  }else{
-    printf("*** EMPATE!! ***\n");
-  }
-  break;
-  case 3:
-  printf("Vamos comparar o PIB:\n");
-  printf("O PIB de %s e: %f. O PIB de %s e: %f.\n", nomedacidade1, pib1, nomedacidade2, pib2);
-  
-  if(pib1 > pib2){
-    printf("***  A CARTA UM VENCEU!! ***\n");
-  }else if(pib1 < pib2){
-    printf("*** A CARTA DOIS VENCEU!! ***\n");
-  }else{
-    printf("### EMPATOU!! ###\n");
-  }
-  break;
-
-  case 4:
-  printf("Vamos comparar o numero de pontos turisticos:\n");
-  printf("%s tem %d pontos turisticos. %s tem %d pontos turisticos.\n", nomedacidade1, numerodepontos1, nomedacidade2, numerodepontos2);
-  if(numerodepontos1 > numerodepontos2){
-    printf("### A CARTA UM VENCEU!! ###\n");
-  }else if(numerodepontos1 < numerodepontos2){
-    printf("###  A CARTA DOISVENCEU!! ###\n");
-  }else{
-    printf("### EMPATE ###\n");
-  }
-  break;
-
-  case 5:
-  printf("Vamos comparar a densidade demografica:\n");
-  printf("A densidade demografica de %s e: %f. A densidade demografica de %s e: %f.\n", nomedacidade1, densidadepopulacional1, nomedacidade2, densidadepopulacional2);
-
-  if(densidadepopulacional1 > densidadepopulacional2){
-    printf("### A CARTA UM VENCEU!! ###\n");
-  }else if(densidadepopulacional1 > densidadepopulacional2){
-    printf("### A CARTA DOIS VENCEU!! ###\n");
-  }else{
-    printf("###  EMPATE!! ###\n");
-  }
-  break;
-
-  default:
-  printf("### OPÇAO INVALIDA ###\n");
-  break;
-}
-
-
-return 0;
-}
-// fim do codigo 
